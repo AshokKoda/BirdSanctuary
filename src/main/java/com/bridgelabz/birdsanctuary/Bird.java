@@ -9,6 +9,30 @@ public class Bird {
 	Color color;
 	String birdId;
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
+
+	public String getBirdId() {
+		return birdId;
+	}
+
+	public void setBirdId(String birdId) {
+		this.birdId = birdId;
+	}
+
 	void eat() {
 		System.out.println(getClass().getSimpleName() + " can eat");
 	}
