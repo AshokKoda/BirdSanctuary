@@ -6,6 +6,18 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class UserInterface {
+	
+	private static UserInterface userInterface;
+	private UserInterface() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public static UserInterface getInstance() {
+		if(userInterface == null) {
+			userInterface = new UserInterface();
+		}
+		return userInterface;
+	}
 
 	void print(Set<Bird> birds) {
 		for (Bird bird : birds) {
@@ -26,6 +38,10 @@ public class UserInterface {
 		int select = sc.nextInt();
 		return select;
 		
+	}
+	
+	public boolean exit() {
+		return true;
 	}
 
 }

@@ -5,9 +5,17 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class BirdsRepository {
-
+	
 	//private List<Bird> birdsList = new ArrayList();
 	private Set<Bird> listBirds = new HashSet<Bird>();
+	private static BirdsRepository instance;
+	
+	public static BirdsRepository getInstance() {
+		if(instance == null) {
+			instance = new BirdsRepository();
+		}
+		return instance;
+	}
 	
 	Set getListBirds() {
 		return listBirds;
