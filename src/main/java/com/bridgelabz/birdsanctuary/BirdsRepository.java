@@ -25,6 +25,7 @@ public class BirdsRepository {
 		listBirds.add(bird);
 	}
 	
+	
 	public void removeBird(Bird bird) {
 		listBirds.remove(bird);
 	}
