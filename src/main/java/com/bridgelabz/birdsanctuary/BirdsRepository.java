@@ -7,7 +7,7 @@ import java.util.Set;
 public class BirdsRepository {
 	
 	//private List<Bird> birdsList = new ArrayList();
-	private Set<Bird> listBirds = new HashSet<Bird>();
+	public Set<Bird> listBirds = new HashSet<Bird>();
 	private static BirdsRepository instance;
 	
 	public static BirdsRepository getInstance() {

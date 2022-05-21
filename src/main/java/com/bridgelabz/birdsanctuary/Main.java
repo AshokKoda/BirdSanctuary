@@ -1,8 +1,9 @@
 package com.bridgelabz.birdsanctuary;
 
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
-
 import com.bridgelabz.birdsanctuary.Bird.Color;
 
 public class Main {
@@ -11,6 +12,7 @@ public class Main {
 	BirdsRepository birdRepo = BirdsRepository.getInstance();
 	static UserInterface userInterface = UserInterface.getInstance();
 	Bird bird = new Bird();
+	
 	static boolean exit = false;
 
 	public static void main(String[] args) {
@@ -112,6 +114,24 @@ public class Main {
 			System.out.println("Invalid option.");
 		}
 	}
+	
+	public void searchBird() {
+		boolean found = false;
+		sc = new Scanner(System.in);
+		Set<Bird> listBirds = birdRepo.getListBirds();
+		System.out.println("Enter BirdId to search: ");
+		String birdId = sc.next();
+		if(birdId.equalsIgnoreCase(bird.getBirdId())) {
+			found = true;
+		}
+		if(found) {
+			for(Bird b : listBirds) {
+				System.out.println(b);
+			}
+		}	
+	}
+	
+	
 
 	public void handleUserSelection(int op) {
 		switch (op) {
@@ -129,6 +149,9 @@ public class Main {
 			userInterface.print(birdList);
 			break;
 		case 5:
+			searchBird();
+			break;
+		case 6:
 			exit = true;
 			System.out.println("*********** Thank you ***********");
 		}
